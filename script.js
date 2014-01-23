@@ -38,7 +38,22 @@ $(document).ready(function() {
 	var cards_player_2 = [];
 	//divide out the cards into the two arrays
 	
-	
+	cards_player_1 = deck.splice(0,26);
+	cards_player_2 = deck;
+
+	console.log("Deck Player 1 => "+cards_player_1.length);
+
+	console.log("Deck Player 2 => "+cards_player_2.length);
+	/*
+	_.each(deck, function(card) {
+
+
+        if (person.age>oldest) {
+            oldest=person.age;
+            viejo=person;
+    }*/
+
+
 	//create a function (algorithm) called "war" that takes two cards as parameters, compares them and returns a winner. A tie should return false.
 	function war() {
 	}
