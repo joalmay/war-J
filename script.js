@@ -1,6 +1,8 @@
 $(document).ready(function() {
 
-	//what does this do?
+	//War Card Game - Project
+
+	//Function to Convert Greater Values to Jack, Queen or King
 	function convert_value_to_string(value) {
 		if (value > 10) {
 			switch (value) {
@@ -18,7 +20,7 @@ $(document).ready(function() {
 		return value.toString();
 	}
 
-	//what does this do?
+	//Create the Deck
 	var deck = [];
 	var suits = ['hearts', 'diamonds', 'spades', 'clubs'];
 	for (var i = 0; i<suits.length; i++) {
@@ -28,8 +30,9 @@ $(document).ready(function() {
 		}
 	}
 	
-	//shuffle the deck
-	
+	//Shuffle the deck
+	deck = _.shuffle(deck);
+	console.log("Deck:"+deck.length);
 	
 	var cards_player_1 = [];
 	var cards_player_2 = [];
