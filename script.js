@@ -32,7 +32,7 @@ $(document).ready(function() {
 	
 	//Shuffle the deck
 	deck = _.shuffle(deck);
-	console.log("Deck:"+deck.length);
+	console.log("Deck Before Split:"+deck.length);
 	
 	var cards_player_1 = [];
 	var cards_player_2 = [];
@@ -47,15 +47,24 @@ $(document).ready(function() {
 	/*
 	_.each(deck, function(card) {
 
-
-        if (person.age>oldest) {
-            oldest=person.age;
-            viejo=person;
     }*/
 
 
 	//create a function (algorithm) called "war" that takes two cards as parameters, compares them and returns a winner. A tie should return false.
-	function war() {
+	function war(card1, card2) {
+		var numberCard1 = card2.number;
+		var numberCard2 = card1.number;
+
+		if(numberCard1 > numberCard2){
+			//Player 1 Win
+			return 1;
+		} else if(numberCard1 < numberCard2) {
+			//Player 2 Win
+			return 2;
+		} else {
+			//Draw
+			return false;
+		}
 	}
 	
 	
@@ -63,6 +72,29 @@ $(document).ready(function() {
 		//compare the cards
 		//give the winner both cards (at end of deck)
 	function play() {
+		var card1 = _.initial(cards_player_1);
+		var card2 = _.initial(cards_player_2);
+		//compare the cards
+
+		var winner=war(card1, card2);
+
+		switch (winner) {
+				case 1:
+				//give the winner both cards (at end of deck)
+				cards_player_1.push(card1);
+				cards_player_1.push(card2);
+				break;
+
+				case 2:
+				//give the winner both cards (at end of deck)
+				cards_player_2.push(card1);
+				cards_player_2.push(card2);
+				break;
+
+				//Draw
+				default:
+				alert("Draw");
+			}	
 		
 		//this function (defined below) will continue to the next turn
 		advance();
