@@ -69,6 +69,11 @@ $(document).ready(function() {
 			return false;
 		}
 	}
+
+		//Tied - Function for Draw
+		function tied_cards() {
+			alert("Draw");
+		}
 	
 	
 	//create a play function
@@ -99,7 +104,7 @@ $(document).ready(function() {
 
 				//Draw
 				default:
-				alert("Draw");
+				tied_cards();
 			}	
 		
 		//this function (defined below) will continue to the next turn
