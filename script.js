@@ -52,8 +52,8 @@ $(document).ready(function() {
 
 	//create a function (algorithm) called "war" that takes two cards as parameters, compares them and returns a winner. A tie should return false.
 	function war(card1, card2) {
-		var numberCard1 = card2.number;
-		var numberCard2 = card1.number;
+		var numberCard1 = convert_value_to_string(card1.number);
+		var numberCard2 = convert_value_to_string(card2.number);
 
 		console.log("Number Player 1 => "+numberCard1);
 		console.log("Number Player 2 => "+numberCard2);
@@ -75,8 +75,8 @@ $(document).ready(function() {
 		//compare the cards
 		//give the winner both cards (at end of deck)
 	function play() {
-		var card1 = _.first(cards_player_1);
-		var card2 = _.first(cards_player_2);
+		var card1 = cards_player_1.shift();
+		var card2 = cards_player_2.shift();
 		//compare the cards
 
 		console.log(card1);
