@@ -55,6 +55,9 @@ $(document).ready(function() {
 		var numberCard1 = card2.number;
 		var numberCard2 = card1.number;
 
+		console.log("Number Player 1 => "+numberCard1);
+		console.log("Number Player 2 => "+numberCard2);
+
 		if(numberCard1 > numberCard2){
 			//Player 1 Win
 			return 1;
@@ -72,9 +75,12 @@ $(document).ready(function() {
 		//compare the cards
 		//give the winner both cards (at end of deck)
 	function play() {
-		var card1 = _.initial(cards_player_1);
-		var card2 = _.initial(cards_player_2);
+		var card1 = _.first(cards_player_1);
+		var card2 = _.first(cards_player_2);
 		//compare the cards
+
+		console.log(card1);
+		console.log(card2);
 
 		var winner=war(card1, card2);
 
